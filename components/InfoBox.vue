@@ -57,12 +57,15 @@ export default {
     },
     callback: {
       type: Function,
+    },
+    link: {
+      type: String,
     }
   },
   methods: {
     itemSelected() {
       this.selected = !this.selected
-      this.callback(this.place)
+      this.callback({ name: this.place, kind: this.kind, link: this.link })
       //this.$refs.check_btn.classList.
       console.log(this.selected)
     }
